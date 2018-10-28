@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO</title>
+</head>
+<body>
+<br>
+<form th:action="@{/}" method="post">
+    <input type="text" name="msg"/>
+    <input type="submit" value="SAVE"/>
+</form>
+<br>
+<div th:each="myObject: ${allMyObject}" th:object="${myObject}">
+    Message: <span th:text="*{msg}">a message</span><br>
+    Id: <span th:text="*{id}">0</span><br>
+</div>
+</body>
+</html>
